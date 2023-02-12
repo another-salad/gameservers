@@ -1,0 +1,14 @@
+version: "3"
+services:
+  terraria_ps_control_app:
+    container_name: terraria_psca
+    image: mcr.microsoft.com/powershell:lts-7.2-debian-buster-slim
+    volumes:
+      - ./app:/media
+    secrets:
+      - apitokens
+    command: pwsh /media/scripts/${PSF}.ps1 ${ENDPOINT} ${MSG}
+
+secrets:
+  apitokens:
+    file: tokens.json

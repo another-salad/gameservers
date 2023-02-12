@@ -1,0 +1,4 @@
+{
+    "broadcast": "/v2/server/broadcast?msg=",
+    "activeplayers": "/v2/players/list?"
+}
