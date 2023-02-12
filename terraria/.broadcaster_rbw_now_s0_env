@@ -1,0 +1,3 @@
+PSF=broadcaster
+ENDPOINT=server0
+MSG=restartWarningNow
