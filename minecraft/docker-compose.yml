@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  mc_message_container:
+    container_name: mc_rcon_messager
+    build: .
+    volumes:
+        - "./app:/app"
+        # - "YOUR_DIR:/servers"  <--- Uncomment this line and replace YOUR_DIR with the directory where your server files are located
+    command: "python3 /app/main.py --msg ${MSG}"

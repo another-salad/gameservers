@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  dev_mc_container:
+    build: .
+    volumes:
+        - "./app:/app"
+    command: tail -F anything  # keeps the container running without running the flask app

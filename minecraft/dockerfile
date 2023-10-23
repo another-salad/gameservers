@@ -1,0 +1,15 @@
+FROM python:3.11.6-alpine3.18
+
+# UPDATE/UPGRADE PACKAGES AND PIP
+RUN apk update \
+    && apk upgrade \
+    && apk add --no-cache build-base \
+    && pip3 install --upgrade pip
+
+# INSTALL REQUIREMENTS
+COPY requirements.txt /
+RUN pip3 install --require-hashes -r requirements.txt
+
+# CREATE APP DIR
+RUN mkdir app
+RUN mkdir servers
