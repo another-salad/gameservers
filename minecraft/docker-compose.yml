@@ -6,4 +6,5 @@ services:
     build: .
     volumes:
         - "./app:/app"
+        # path of minecraft server data directory(s)
     command: "python3 /app/main.py --msg ${MSG}"
