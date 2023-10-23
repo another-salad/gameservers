@@ -13,6 +13,6 @@ class MainArgs(ArgumentParser):
         super().__init__(description=description)
         self.add_argument("--msg", dest="message", type=str, required=True)
 
-if __name__ == "main":
+if __name__ == "__main__":
     arg, _ = MainArgs().parse_known_args()
-    send_msg(arg)
+    send_msg(arg.message)
