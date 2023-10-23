@@ -35,4 +35,10 @@ def send_msg(msg: str):
         raise InvaldMsg(f"Server message must be in approved list: {ACCEPTABLE_MESSAGES.keys()}")
     for server in get_servers():
         with Client(server.host, server.rconport, passwd=get_rcon_pw_from_prop_file(server.datadir)) as client:
-            client.say(server_msg())
+            # FILTHY HACK
+            if server_msg == "players":
+                msg_to_send = server_msg(client)
+            else:
+                msg_to_send = server_msg()
+
+            client.say(msg_to_send)
