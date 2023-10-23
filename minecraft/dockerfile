@@ -12,3 +12,4 @@ RUN pip3 install --require-hashes -r requirements.txt
 
 # CREATE APP DIR
 RUN mkdir app
+RUN mkdir servers

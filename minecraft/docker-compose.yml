@@ -6,5 +6,5 @@ services:
     build: .
     volumes:
         - "./app:/app"
-        # path of minecraft server data directory(s)
+        # - "YOUR_DIR:/servers"  <--- Uncomment this line and replace YOUR_DIR with the directory where your server files are located
     command: "python3 /app/main.py --msg ${MSG}"
