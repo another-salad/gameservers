@@ -36,7 +36,7 @@ def send_msg(msg: str):
     for server in get_servers():
         with Client(server.host, server.rconport, passwd=get_rcon_pw_from_prop_file(server.datadir)) as client:
             # FILTHY HACK
-            if server_msg == "players":
+            if msg == "players":
                 msg_to_send = server_msg(client)
             else:
                 msg_to_send = server_msg()
