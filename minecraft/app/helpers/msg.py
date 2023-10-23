@@ -20,7 +20,7 @@ def _restart() -> str:
 
 def _players(client: Client) -> list:
     player_info = client.list()
-    return f'Current Miners: {",".join(getattr(x, "name", "") for x in getattr(player_info, "players", []))}'
+    return f'Current Miners: {", ".join(getattr(x, "name", "") for x in getattr(player_info, "players", []))}'
 
 ACCEPTABLE_MESSAGES = {
     "time": _time,
