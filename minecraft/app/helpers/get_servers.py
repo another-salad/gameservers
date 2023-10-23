@@ -19,7 +19,7 @@ def get_servers() -> list[Server]:
     return loads(Path(Path(__file__).parent, "servers.json").read_bytes(), object_hook=server_obj)
 
 def get_rcon_pw_from_prop_file(absolute_parent_path: str) -> str:
-    prop_file_contents = Path(absolute_parent_path, "server.properties").absolute().read_text()
+    prop_file_contents = Path(Path(absolute_parent_path).absolute(), "server.properties").read_text()
     res = re.search(RCON_PW_RGX, prop_file_contents)
     if res:
         return res.group("pw")

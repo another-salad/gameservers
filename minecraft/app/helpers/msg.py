@@ -4,7 +4,7 @@ from datetime import datetime
 
 from mcipc.rcon.je import Client
 
-from get_servers import get_servers, get_rcon_pw_from_prop_file
+from helpers.get_servers import get_servers, get_rcon_pw_from_prop_file
 
 class InvaldMsg(Exception):
     """Raised when an unknown message is requested"""
