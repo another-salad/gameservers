@@ -2,7 +2,7 @@
 
 from argparse import ArgumentParser
 
-from helpers.msg import send_msg
+from helpers.msg import interact
 
 class MainArgs(ArgumentParser):
     """Arg parser"""
@@ -15,4 +15,4 @@ class MainArgs(ArgumentParser):
 
 if __name__ == "__main__":
     arg, _ = MainArgs().parse_known_args()
-    send_msg(arg.message)
+    interact(arg.message)
